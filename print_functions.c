@@ -1,17 +1,20 @@
-#include "holberton.h"
-#include <unistd.h>
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
+#include "holberton.h"
 
 /**
- * _putchar - Prints a single character to standard output
- * @c: character
- * Return: Nothing
- */
-void _putchar(char c)
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+  */
+int _putchar(char c)
 {
-write(1, &c, 1);
+	return (write(1, &c, 1));
 }
+
+
 /**
  * print_int - Prints an integer to standard output
  * @args: list of variable argument
