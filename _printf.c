@@ -20,10 +20,8 @@ int _printf(const char *format, ...)
 	};
 
 	va_start(args, format);
-       	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-	{
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	}
 	for (fi = 0; format[fi] != '\0'; fi++)
 	{
 		while (format[fi] != '%' && format[fi] != '\0')
@@ -33,13 +31,9 @@ int _printf(const char *format, ...)
 			fi++;
 		}
 		if (format[fi] != '\0')
-		{
 			fi++;
-		}
 		else
-		{
 			break;
-		}
 		for (speci = 0; speci < 9; speci++)
 		{
 			if (format[fi] == *(spec[speci].spec))
