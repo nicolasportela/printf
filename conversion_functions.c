@@ -1,6 +1,6 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdarg.h>
+#include "holberton.h"
 
 /**
  * print_bin - Converts unsigned int argument to binary
