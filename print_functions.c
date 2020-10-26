@@ -78,7 +78,7 @@ if (str == NULL)
 str = "(null)";
 if (str[0] == '\0')
 return (0);
-for (length = 0; str[length] != '\0'; length++)
+for (length = 1; str[length] != '\0'; length++)
 ;
 for (index = 0; index < length; index++)
 _putchar(str[index]);
