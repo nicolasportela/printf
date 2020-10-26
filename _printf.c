@@ -21,7 +21,10 @@ spec_t spec[] = {
 
 va_start(args, format);
 if (format == NULL)
+{
+write(1, "(null)", 7);
 return (-1);
+}
 for (fi = 0; format[fi] != '\0'; fi++)
 {
 while (format[fi] != '%' && format[fi] != '\0')
