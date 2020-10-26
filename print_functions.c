@@ -41,7 +41,7 @@ for (divisor = 1; divisor <= number; divisor *= 10)
 while (divisor > 1)
 {
 divisor /= 10;
-_putchar((number / divisor) + '0');
+_putchar((number / divisor) +'0');
 number %= divisor;
 count++;
 }
