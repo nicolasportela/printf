@@ -37,6 +37,7 @@ count++;
 }
 return (count);
 }
+
 /**
  * print_Xhexa - Converts decimal to uppercase hexadecimal
  * @args: the list of arguments

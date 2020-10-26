@@ -1,7 +1,5 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
-#include <stdarg.h>
-
 /**
  * struct specifier - Struct for data types and function pointers
  * @spec: The data type to be specified by _printf
@@ -16,7 +14,7 @@ int (*f)();
 } spec_t;
 
 int _printf(const char *format, ...);
-void _putchar(char c);
+int _putchar(char c);
 int print_int(va_list args);
 int print_char(va_list args);
 int print_str(va_list args);

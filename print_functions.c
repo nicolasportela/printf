@@ -1,6 +1,19 @@
 #include <stdio.h>
 #include <stdarg.h>
+#include <unistd.h>
 #include "holberton.h"
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+  */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
 
 /**
  * print_int - Prints an integer to standard output
