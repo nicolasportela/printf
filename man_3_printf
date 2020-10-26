@@ -44,43 +44,20 @@ SYNOPSIS
 
        The arguments must correspond properly (after type promotion) with
        the conversion specifier.  By default, the arguments are used in the
-       order given, where each '*' (see Field width and Precision below) and
-       each conversion specifier asks for the next argument (and it is an
-       error if insufficiently many arguments are given).  One can also
-       specify explicitly which argument is taken, at each place where an
+       order given, where each '*' and each conversion specifier asks for the next argument. 
+       One can also specify explicitly which argument is taken, at each place where an
        argument is required, by writing "%m$" instead of '%' and "*m$"
        instead of '*', where the decimal integer m denotes the position in
        the argument list of the desired argument, indexed starting from 1.
-       Thus,
-
-           printf("%*d", width, num);
-
-       and
-
-           printf("%2$*1$d", width, num);
-
-       are equivalent.  The second style allows repeated references to the
-       same argument.  The C99 standard does not include the style using
-       '$', which comes from the Single UNIX Specification.  If the style
-       using '$' is used, it must be used throughout for all conversions
-       taking an argument and all width and precision arguments, but it may
-       be mixed with "%%" formats, which do not consume an argument.  There
-       may be no gaps in the numbers of arguments specified using '$'; for
-       example, if arguments 1 and 3 are specified, argument 2 must also be
-       specified somewhere in the format string.
-
+       
        For some numeric conversions a radix character ("decimal point") or
        thousands' grouping character is used.  The actual character used
        depends on the LC_NUMERIC part of the locale.  (See setlocale(3).)
        The POSIX locale uses '.' as radix character, and does not have a
-       grouping character.  Thus,
+       grouping character.
 
-           printf("%'.2f", 1234567.89);
-
-       results in "1234567.89" in the POSIX locale, in "1234567,89" in the
-       nl_NL locale, and in "1.234.567,89" in the da_DK locale.
-
-   Flag characters
+       Flag characters
+       
        The character % is followed by zero or more of the following flags:
 
        #      The value should be converted to an "alternate form".  For o
@@ -206,19 +183,10 @@ SYNOPSIS
               argument, or a following n conversion corresponds to a pointer
               to a ptrdiff_t argument.
 
-       SUSv3 specifies all of the above, except for those modifiers explic
-       itly noted as being nonstandard extensions.  SUSv2 specified only the
-       length modifiers h (in hd, hi, ho, hx, hX, hn) and l (in ld, li, lo,
-       lx, lX, ln, lc, ls) and L (in Le, LE, Lf, Lg, LG).
-
-       As a nonstandard extension, the GNU implementations treats ll and L
-       as synonyms, so that one can, for example, write llg (as a synonym
-       for the standards-compliant Lg) and Ld (as a synonym for the stan
-       dards compliant lld).  Such usage is nonportable.
-
-   Conversion specifiers
-       A character that specifies the type of conversion to be applied.  The
-       conversion specifiers and their meanings are:
+       Conversion specifiers
+       
+	       A character that specifies the type of conversion to be applied.  The
+       	       conversion specifiers and their meanings are:
 
        d, i   The int argument is converted to signed decimal notation.  The
               precision, if any, gives the minimum number of digits that
@@ -339,8 +307,10 @@ SYNOPSIS
               of strerror(errno).  No argument is required.
 
        %      A '%' is written.  No argument is converted.  The complete
+
               conversion specification is '%%'.
-RETURN VALUE         top
+RETURN VALUE         
+     
        Upon successful return, these functions return the number of
        characters printed (excluding the null byte used to end output to
        strings).
@@ -354,32 +324,15 @@ RETURN VALUE         top
        truncated.  (See also below under NOTES.)
 
        If an output error is encountered, a negative value is returned.
-ATTRIBUTES         top
+
+ATTRIBUTES         
+       
        For an explanation of the terms used in this section, see
        attributes(7).
 
        
        Interface                Attribute      Value          
        
-       printf(), fprintf(),     Thread safety  MT-Safe locale 
-       sprintf(), snprintf(),                                 
-       vprintf(), vfprintf(),                                 
-       vsprintf(), vsnprintf()                                
+       _printf()             Thread safety  MT-Safe locale 
        
-CONFORMING TO         top
-       fprintf(), printf(), sprintf(), vprintf(), vfprintf(), vsprintf():
-       POSIX.1-2001, POSIX.1-2008, C89, C99.
-
-       snprintf(), vsnprintf(): POSIX.1-2001, POSIX.1-2008, C99.
-
-       The dprintf() and vdprintf() functions were originally GNU extensions
-       that were later standardized in POSIX.1-2008.
-
-       Concerning the return value of snprintf(), SUSv2 and C99 contradict
-       each other: when snprintf() is called with size=0 then SUSv2
-       stipulates an unspecified return value less than 1, while C99 allows
-       str to be NULL in this case, and gives the return value (as always)
-       as the number of characters that would have been written in case the
-       output string has been large enough.  POSIX.1-2001 and later align
-       their specification of snprintf() with C99.
-  
+WRITTEN BY	Nicolás Portela & Alexis Oreiro, Montevideo 26 October 2020.
