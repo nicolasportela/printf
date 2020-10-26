@@ -1,5 +1,6 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
+#include <stdarg.h>
 /**
  * struct specifier - Struct for data types and function pointers
  * @spec: The data type to be specified by _printf
