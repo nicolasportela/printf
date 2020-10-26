@@ -4,15 +4,6 @@
 #include "holberton.h"
 
 /**
- * _putchar - Prints a single character to standard output
- * @c: character
- * Return: Nothing
- */
-void _putchar(char c)
-{
-write(1, &c, 1);
-}
-/**
  * print_int - Prints an integer to standard output
  * @args: list of variable argument
  * Return: count of digit in number
