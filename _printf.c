@@ -13,8 +13,7 @@ stfor_t get_opt[] = {
 {"c", print_char}, {"s", print_string},
 {"i", print_int}, {"d", print_int},
 {"%", print_per}, {"b", print_bin},
-{"o", print_oct}, {"X", print_Xhexa},
-{"u", print_u}, {NULL, NULL}
+{NULL, NULL}
 };
 
 if (format == NULL)
