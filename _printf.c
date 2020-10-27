@@ -16,7 +16,7 @@ stfor_t get_opt[] = {
 {NULL, NULL}
 };
 
-if (!format)
+if (format == NULL)
 {
 return (-1);
 }
