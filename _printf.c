@@ -19,10 +19,10 @@ spec_t spec[] = {
 {"u", print_u}, {NULL, NULL}
 };
 
+va_start(args, format);
 if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 return (-1);
-va_start(args, format);
-for (fi = 0; format[fi] != '\0' && format; fi++)
+for (fi = 0; format[fi] != '\0'; fi++)
 {
 while (format[fi] != '%' && format[fi] != '\0')
 {
@@ -40,6 +40,7 @@ if (format[fi] == *(spec[speci].spec))
 {
 count += spec[speci].f(args);
 break;
+}
 }
 }
 va_end(args);
