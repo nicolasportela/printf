@@ -42,17 +42,6 @@ count += spec[speci].f(args);
 break;
 }
 }
-if (format[i+1] == ' ' || format[i+1] == '\0')
-{
-return (-1);
-}
-else
-{
-_putchar('%');
-_putchar(i+1);
-count == count + 2;
-}
-}
 va_end(args);
 return (count);
 }
