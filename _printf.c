@@ -12,11 +12,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0, fi, speci;
 	spec_t spec[] = {
-		{"c", print_char}, {"s", print_str},
-		{"%", print_per}, {"d", print_int},
-		{"i", print_int}, {"b", print_bin},
-		{"o", print_oct}, {"X", print_Xhexa},
-		{"u", print_u}, {NULL, NULL}
+		{"c", print_char},
+		{"s", print_str},
+		{NULL, NULL}
 	};
 
 	va_start(args, format);
