@@ -1,4 +1,4 @@
-## _PRINTF.C
+## _PRINTF PROJECT
 This is a custom printf function made for Holberton School.
 
 
